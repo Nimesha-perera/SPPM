@@ -2,7 +2,6 @@
 if (!isset($_SESSION['login_user'])) {
     header('Location:login.php');
 }
-$connect = mysqli_connect("localhost","root","","liyanage");
 ?>
 
 
@@ -99,46 +98,66 @@ $connect = mysqli_connect("localhost","root","","liyanage");
 
     <!-----------------------------------------------------* Main Section End *--------------------------------------------------------------------------------------------->
 
-    <section class="product" id="product">
-                <div class="container py-5">
+    <section class="product">
+        <div class="container py-5">
+            <div class="row py-5 ">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1>Hot Deals..</h1>
 
-                    <div class="row">
-                        <?php
-
-            $query = "SELECT * FROM products limit 4";
-            $result = mysqli_query($connect, $query);
-
-            while ($row = mysqli_fetch_array($result)) {
-
-            ?>
-
-                        <div class="col-lg-3 text-center">
-                            <div class="card border-0 bg-light mb-2">
-                                <div class="card-body">
-
-
-                                    <form method="get" action="ProductView.php?id=<?= $row['id'] ?>">
-                                        <img src="upload\<?= $row['image'] ?>" class="image-fluid"
-                                            style="height: 300px;">
-
-
-
-                                </div>
-                            </div>
-                            <h6><?= $row['productname'] ?></h6>
-
-                            <p>Rs. <?= $row['productprice'] ?>.00</p>
-
-                            <button type="button" class="btncart btn-sm">
-                                <span class="glyphicon glyphicon-shopping-cart"></span> <a
-                                    href="ProductView.php?id=<?php echo $row["id"]; ?>">View Product</a>
-                            </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/Anchor.png" class="image-fluid" alt="">
                         </div>
+                    </div>
+                    <h6>Anchor Milk Powder 700g</h6>
+                    <p> <del>Rs.920</del>&nbsp&nbsp Rs.850</p>
 
-                        <?php }
-            ?>
+                </div>
 
-            </section>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/nadu rice.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Araliya Supiri Nadu 10kg</h6>
+                    <p><del>Rs.1600</del>&nbsp&nbsp Rs.1550</p>
+
+                </div>
+
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/prima flour.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Prima Wheat flour 1kg</h6>
+                    <p><del>Rs.220</del> &nbsp&nbspRs.200</p>
+
+                </div>
+
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/Brown-Sugar-Packet-1.00-kg_1-600x600.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>My choice Brown Sugar 1kg</h6>
+                    <p><del>Rs.200</del>&nbsp&nbsp Rs.180</p>
+
+                </div>
+            </div>
+        </div>
+        <!----
+        <div class="col-lg-5 m-auto text-center">
+            <button type="submit" class="btn1"> View more deals</button>
+
+        </div>---------->
+    </section>
     <!---------------------------------------------------------------------------------------------------------------------------------------------->
     <section class="fruit py-4">
         <div id="fruits" class="section dark_bg layout_padding left_white">

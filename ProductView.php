@@ -274,62 +274,6 @@ else{
 
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript">
-    $(function() {
-        $('#save').click(function(e) {
-            var valid = this.form.checkValidity();
-            if (valid) {
-                
-
-                e.preventDefault();
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'process.php',
-                    data: {
-                        firstname: firstname,
-                        lastname: lastname,
-                        email: email,
-                        phone: phone,
-                        address1: address1,
-                        address2: address2,
-                        city: city,
-                        postal: postal,
-                        password: password
-                    },
-                    success: function(data) {
-                        Swal.fire(
-                            'Successfull',
-                            'User Registration',
-                            'success'
-                        )
-
-
-                    },
-                    error: function(data) {
-
-                        Swal.fire(
-                            'Error in saving the details',
-                            '',
-                            'error'
-                        )
-                    }
-                });
-
-            } else {
-
-            }
-
-
-
-
-        });
-
-    });
-    </script>
-
  
     </div>
   </div>

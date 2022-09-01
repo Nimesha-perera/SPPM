@@ -143,7 +143,7 @@ $res = mysqli_query($connect, "SELECT * FROM products");
                                             <img src="upload\<?= $row['image'] ?>" class="image-fluid"
                                                 style="height: 300px width: 300px;">
                                         </a>
-                                    
+                                    </div>
                                     <div class="product-info ">
                                         <span style="color:black;"><?= $row['category'] ?></span>
                                         <h4 style="color:black;"><?= $row['productname'] ?></h4>
@@ -151,7 +151,7 @@ $res = mysqli_query($connect, "SELECT * FROM products");
                                         <span style="color:black;"><?= $row['description'] ?></span>
                                         <h4 style="color:black;">Rs. <?= $row['productprice'] ?>.00</h4>
                                     </div>
-                                    </div>
+
                                     <ul class="icons">
 
 

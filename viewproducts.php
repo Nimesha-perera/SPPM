@@ -229,11 +229,11 @@ $res = mysqli_query($connect, "SELECT * FROM products");
                     <section class="section featured">
                         <?php
 
-            $query = "SELECT * FROM products ";
-            $res = mysqli_query($connect, $query);
-            while ($row = mysqli_fetch_array($res)) {
+                        $query = "SELECT * FROM products";
+                        $res = mysqli_query($connect, $query);
+                        while ($row = mysqli_fetch_array($res)) {
 
-            ?>
+                        ?>
                         <div class="col-md-3">
                             <div class="product-center container ">
                                 <div class="product-item ">
@@ -241,17 +241,17 @@ $res = mysqli_query($connect, "SELECT * FROM products");
                                         <a href="" class="product-thumb">
 
                                             <img src="upload\<?= $row['image'] ?>" class="image-fluid"
-                                                style="height: 300px width: 300px;">
+                                                style="height: 200px width 200px;">
                                         </a>
-                                    
+                                    </div>
                                     <div class="product-info ">
-                                        <span style="color:black;"><?= $row['category'] ?></span>
-                                        <h4 style="color:black;"><?= $row['productname'] ?></h4>
+                                        <span style="color:black"><?= $row['category'] ?></span>
+                                        <h4 style="color:black"><?= $row['productname'] ?></h4>
 
-                                        <span style="color:black;"><?= $row['description'] ?></span>
-                                        <h4 style="color:black;">Rs. <?= $row['productprice'] ?>.00</h4>
+                                        <span style="color:black"><?= $row['description'] ?></span>
+                                        <h4 style="color:black">Rs. <?= $row['productprice'] ?>.00</h4>
                                     </div>
-                                    </div>
+
                                     <ul class="icons">
 
 
@@ -269,23 +269,24 @@ $res = mysqli_query($connect, "SELECT * FROM products");
                                             <form action="deleteprod.php" method="POST">
                                                 <input type="hidden" name="deleteid" value="<?php echo $row['id']; ?>">
                                                 <button type="submit" name="deletebtn"><i class="bx bx-trash"
-                                                        aria-hidden="true"></i> </button>
+                                                        aria-hidden="true" onclick="myFunction()"></i> </button>
                                             </form>
+                                            <script>
+                                            function myFunction() {
+                                                alert("ITEM DELETED");
+                                            }
+                                            </script>
 
                                     </ul>
-         
+
                                 </div>
 
                             </div>
                         </div>
 
                         <?php }
-            ?>
-                        <div class="top container ">
+                        ?>
 
-                            <a href="#" class="view-more">View more</a>
-
-                        </div>
 
                     </section>
 

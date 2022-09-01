@@ -1,9 +1,15 @@
 <?php
-
+/*
 session_start();
-  
-$connect = mysqli_connect("localhost", "root", "", "liyanage");
-#echo $user_check;
+if (!isset($_SESSION['userlogin'])) {
+    header("Location: login.php");
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION);
+    header("Location: index.php");
+}
+*/
 ?>
 
 <!doctype html>
@@ -97,48 +103,74 @@ $connect = mysqli_connect("localhost", "root", "", "liyanage");
     </section>
 
     <!-----------------------------------------------------* Main Section End *--------------------------------------------------------------------------------------------->
-    <section class="product" id="product">
-                <div class="container py-5">
 
-                    <div class="row">
-                        <?php
+    <section class="product">
+        <div class="container py-5">
+            <div class="row py-5 ">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1>Hot Deals..</h1>
 
-            $query = "SELECT * FROM products limit 4";
-            $result = mysqli_query($connect, $query);
-
-            while ($row = mysqli_fetch_array($result)) {
-
-            ?>
-
-                        <div class="col-lg-3 text-center">
-                            <div class="card border-0 bg-light mb-2">
-                                <div class="card-body">
-
-
-                                    <form method="get" action="ProductView.php?id=<?= $row['id'] ?>">
-                                        <img src="upload\<?= $row['image'] ?>" class="image-fluid"
-                                            style="height: 300px;">
-
-
-
-                                </div>
-                            </div>
-                            <h6><?= $row['productname'] ?></h6>
-
-                            <p>Rs. <?= $row['productprice'] ?>.00</p>
-
-                            <button type="button" class="btncart btn-sm">
-                                <span class="glyphicon glyphicon-shopping-cart"></span> <a
-                                    href="login.php">View Product</a>
-                            </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/Anchor.png" class="image-fluid" alt="">
                         </div>
+                    </div>
+                    <h6>Anchor Milk Powder 700g</h6>
+                    <p> <del>Rs.920</del>&nbsp&nbsp Rs.850</p>
+                    <button type="button" class="btncart btn-sm">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                    </button>
+                </div>
 
-                        <?php }
-            ?>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/nadu rice.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Araliya Supiri Nadu 10kg</h6>
+                    <p><del>Rs.1600</del>&nbsp&nbsp Rs.1550</p>
+                    <button type="button" class="btncart btn-sm">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                    </button>
+                </div>
 
-            </section>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/prima flour.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Prima Wheat flour 1kg</h6>
+                    <p><del>Rs.220</del> &nbsp&nbspRs.200</p>
+                    <button type="button" class="btncart btn-sm">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                    </button>
+                </div>
 
-    
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="images/Brown-Sugar-Packet-1.00-kg_1-600x600.png" class="image-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>My choice Brown Sugar 1kg</h6>
+                    <p><del>Rs.200</del>&nbsp&nbsp Rs.180</p>
+                    <button type="button" class="btncart btn-sm">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 m-auto text-center">
+            <button type="submit" class="btn1"> View more deals</button>
+
+        </div>
+    </section>
     <!---------------------------------------------------------------------------------------------------------------------------------------------->
     <section class="fruit py-4">
         <div id="fruits" class="section dark_bg layout_padding left_white">
