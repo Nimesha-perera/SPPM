@@ -74,7 +74,7 @@ li {
 
 .banner_main {
     padding: 300px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.5)), url(images/boxed-water-is-better-7H1hDt694s8-unsplash.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -300,4 +300,92 @@ button:focus {
     color: #03a9f4
 }
 
+
+.form-inline .input-group,
+.form-inline .custom-select {
+    width: auto;
+}
+
 /****************************************************Nifras End*******************************************************************************/
+
+html,
+body,
+header,
+.carousel {
+    height: 60vh;
+}
+
+@media (max-width: 740px) {
+
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}
+
+.view,
+body,
+html {
+    height: 100%
+}
+
+.carousel {
+    height: 50%
+}
+
+.carousel .carousel-inner,
+.carousel .carousel-inner .active,
+.carousel .carousel-inner .carousel-item {
+    height: 100%
+}
+
+@media (max-width:776px) {
+    .carousel {
+        height: 100%
+    }
+}
+
+.page-footer {
+    background-color: #929FBA
+}
+
+#top-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1E1F29;
+}
+
+.header-links li {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.header-links li:last-child {
+    margin-right: 0px;
+}
+
+.header-links li a {
+    color: #FFF;
+}
+
+.header-links li a:hover {
+    color: #D10024;
+}
+
+.header-links li i {
+    color: #D10024;
+    margin-right: 5px;
+}

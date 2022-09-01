@@ -66,7 +66,7 @@ function ValidateContact(){
         return false;
     }
 
-    if(Contact.length !== 10){
+    if(Contact.length != 10){
         contactError.innerHTML = 'Contact Number should be 10 digits';
         document.getElementById("contact").style.borderColor ="Red";
         return false;
