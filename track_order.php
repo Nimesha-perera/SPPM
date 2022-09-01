@@ -36,6 +36,14 @@ session_start();
         text-decoration: underline;
         color: #2baf63;
     }
+    df-messenger {
+   --df-messenger-bot-message: #2baf63;
+   --df-messenger-button-titlebar-color: #0d5029;
+   --df-messenger-chat-background-color: #fafafa;
+   --df-messenger-font-color: white;
+   --df-messenger-send-icon: #878fac;
+   --df-messenger-user-message: #479b3d;
+  }
     </style>
 
 <body>
@@ -159,6 +167,13 @@ session_start();
                 </div>
             </div>
         </div>
+
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger class="chatbot"
+  chat-title="Liyanage Group Super Market"
+  agent-id="3ad38590-6894-4940-a9d3-d952463d3fff"
+  language-code="en"
+></df-messenger>
         <!----------- Footer ------------>
         <footer class="footer-bs">
             <div class="row">
